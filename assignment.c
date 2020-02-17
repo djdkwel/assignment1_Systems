@@ -21,39 +21,42 @@ int main(){
         printf("Error opening file\n");
         exit(1);
     }
-    while( fgets(dict[i],sizeof(dict[i]),fp) != NULL){
-
+    while( fscanf(fp,"%s",dict[i]) != EOF){
+        
         i++;
     }
-    for(j; fscanf(fp2,"%s",user[j]) != EOF; j++)
-    {
-        
-    }
+    //strcpy(word,dict);
+
+    while( fscanf(fp2,"%s",user[j]) != EOF){
+            //strcpy(word[i],dict);
+            j++;
+        }
     
     //checks to see if user input is in dictionary
-    while(k<j)
-    {
+    while(k<j){
+        
         while(l<45427)
         {
-            if(user[k]==dict[l]){
+            if(strcmp(user[k],dict[l])==0){
                 found = 1;
+                printf("%s \n",dict[l]);
                 l=0;
-                printf("Yes");
-                break;
                 
-            }
-            
+                break;
+            } 
             l++;
-
         }
             k++;
         }
         k =0;
-        //printf("%s 1",user[k]);
-        printf("%swhat is in this",dict[30825]);
-       if(user[k]==dict[30825]){ 
-            printf("Yes");
-    }
+       /* 
+       int result = strcmp(user[0],dict[308]);
+       printf("%d",result);
+       if(strcmp(user[0],dict[30825])==0){
+           printf("Yes");
+       }*/
+        
+        
 
 }
       
